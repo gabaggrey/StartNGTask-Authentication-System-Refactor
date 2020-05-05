@@ -17,6 +17,11 @@ include_once("lib/header.php");
     ?>
 </main>
 
+
+
+<?php
+include("lib/footer.php");
+?>
 </body>
 
 </html>
