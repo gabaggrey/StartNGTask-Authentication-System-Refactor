@@ -18,7 +18,7 @@
             }
             $session_error .= " in your submission";
 
-            $_SESSION["error"] = $session_error;
+            set_alert('error', $session_error);
             header("Location: login.php");
         } 
         //checking super user login details
@@ -78,14 +78,12 @@
 
                         if ($userObject->designation == "Management" || $userObject->designation == "Teaching staff") {
                             header("Location: mgtDashboard.php");
-                            // echo $userObject->designation;
-                        } elseif ($userObject->designation == "Auxilliary staff") {
+                            
+                        } elseif ($userObject->designation == "Auxiliary staff") {
                             header("Location: generalDashboard.php");
-                            // echo $userObject->designation;
+                            
                         } else {
                             header("Location: generalDashboard.php");
-                            // echo "I am student";
-                            
                         }
                         die();
                     }

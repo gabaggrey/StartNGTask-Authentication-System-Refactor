@@ -1,17 +1,15 @@
 <?php
-
 include_once("lib/header.php");
-
 
 ?>
 
 <header>
     <h1>Corona International Schools</h1>
-    <h3>Home Page</h3>
+    
 </header>
 
 <main>
-    <p>We offer the best education for today's kids</p>
+    <p>The payment failed. Go back to the dashboard and try again after a while</p>
 
 
 

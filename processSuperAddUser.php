@@ -58,7 +58,7 @@
         }
         $session_error .= " in your submission";
 
-        $_SESSION["error"] = $session_error;
+        set_alert('error', $session_error);
         header("Location: register.php");
         
     } else 

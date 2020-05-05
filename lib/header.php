@@ -10,7 +10,9 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Corona International group of schools</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -23,8 +25,7 @@ session_start();
             <a href="register.php">REGISTER</a>
             <a href="forgot.php">FORGOT PASSWORD</a>
         <?php } else { ?>
-            <a href="logout.php">LOGOUT</a>
+             <a href="logout.php">LOGOUT</a>
             <a href="reset.php">RESET PASSWORD</a>
         <?php } ?>
     </nav>
-    

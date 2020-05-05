@@ -1,7 +1,7 @@
 <?php
-
     session_start();
-
+    require_once("functions/users.php");
+    
     $errorCount = 0;
 
     // collecting and verifying the data, validation
@@ -56,14 +56,13 @@
         }
         $session_error .= " in your submission";
 
-        $_SESSION["error"] = $session_error;
+        
+        set_alert('error', $session_error);
         header("Location: register.php");
         
     } else 
     {
-        $allUsers = scandir("db/users/");
-        $countAllUsers = count($allUsers);
-
+       
         $newUserId = $countAllUsers++;
         $newUserId--;
 
@@ -78,18 +77,18 @@
                 "reg_time" => $reg_time
             ];
 
-        for ($i = 0; $i < $countAllUsers; $i++) 
-        {
-            $currentUser = $allUsers[$i];
-            if ($currentUser == $email . ".json")
+            $userExists = find_user();
+            
+            if ($userExists)
             {
                 $_SESSION["error"] = "Registration failed, User already exists";
                 header("Location: register.php");
                 die();
             }
-        }
+         
 
-        file_put_contents("db/users/" . $email . ".json", json_encode($userObject));
+        save_user($userObject);
+
         $_SESSION["message"] = "Registration Successful";
         header("Location: login.php");
         
